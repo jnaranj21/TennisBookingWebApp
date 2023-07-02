@@ -1,0 +1,9 @@
+$dark-color: #262626;
+$light-color: #eeeeee;
+$primary-color: #00dad0;
+
+:export {
+  darkColor: $dark-color;
+  lightColor: $light-color;
+  primaryColor: $primary-color;
+}
