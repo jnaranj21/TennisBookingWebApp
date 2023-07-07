@@ -2,11 +2,11 @@ import React, { MouseEventHandler } from "react";
 import "./Button.scss";
 
 interface ButtonProps {
-    children: string;
-    type: 'button';
-    onClick: MouseEventHandler;
-    buttonStyle: string;
-    buttonSize: string;
+  children: any;
+  type: "button" | "submit" | "reset" | undefined;
+  onClick: MouseEventHandler;
+  buttonStyle: string;
+  buttonSize: string;
 }
 
 const STYLES = ["btn--primary", "btn--outline"];
@@ -18,7 +18,7 @@ export const Button = ({
   onClick,
   buttonStyle,
   buttonSize,
-} : ButtonProps ) => {
+}: ButtonProps) => {
   const checkButtonStyle = STYLES.includes(buttonStyle)
     ? buttonStyle
     : STYLES[0];
@@ -27,10 +27,11 @@ export const Button = ({
 
   return (
     <button
-      className={`btn--medium ${checkButtonStyle} ${checkButtonSize}`}
+      className={`${checkButtonStyle} ${checkButtonSize}`}
       onClick={onClick}
       type={type}
-    >{children}
+    >
+      {children}
     </button>
   );
 };
