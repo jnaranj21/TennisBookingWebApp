@@ -1,5 +1,5 @@
+import Button from "@/components/Button";
 import { Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
-import { Button } from "../../components/Button";
 
 const CourtCard = ({ court }) => {
   const { image, name } = court;
@@ -9,9 +9,7 @@ const CourtCard = ({ court }) => {
       <CardImgOverlay>
         <CardTitle>{name}</CardTitle>
       </CardImgOverlay>
-      <Button buttonStyle="btn--primary" buttonSize="btn--large">
-        Book now
-      </Button>
+      <Button onClick={() => console.log("Clicked")}>Book now</Button>
     </Card>
   );
 };

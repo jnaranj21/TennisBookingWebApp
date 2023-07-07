@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "reactstrap";
 import { Button } from "../components/Button";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Link from "next/link";
+import Button from "@/components/Button";
 
 const HomePage = () => {
   const [hovered, setHovered] = useState(false);
@@ -24,20 +26,20 @@ const HomePage = () => {
             <p className="body-text text-center">#1 TENNIS APP IN SPAIN!</p>
           </Col>
           <Col className="text-center">
-            <Button
-              buttonStyle="btn--outline"
-              buttonSize="btn--large"
-              type="button"
-              onClick={loginOnClick}
-            >
-              BOOK COURTS
+            <Button buttonStyle="btn--outline" buttonSize="btn--large">
+              <Link
+                to="/directory"
+                style={{
+                  textDecoration: "none",
+                  color: hovered ? "black" : "#fff",
+                }}
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+              >
+                BOOK COURTS
+              </Link>
             </Button>
-            <Button
-              buttonStyle="btn--outline"
-              buttonSize="btn--large"
-              type="button"
-              onClick={loginOnClick}
-            >
+            <Button buttonStyle="btn--outline" buttonSize="btn--large">
               TAKE CLASSES
             </Button>
             <Button
@@ -47,7 +49,7 @@ const HomePage = () => {
               onClick={loginOnClick}
             >
               JOIN MATCHES
-            </Button>
+            </Button> */}
           </Col>
         </Row>
       </Container>
